@@ -22,7 +22,7 @@ public class DirectoryServiceImpl implements DirectoryService {
 	// directory path
 	private final String DIRECTORY_PATH = "D:\\projects\\download";
 
-	private static final Long maxFileSize = 536870912L;
+	private static final Long maxFileSize = 1073741824L;
 
 	public Map<?, ?> uploadFile(MultipartFile file) throws IOException, MissingServletRequestPartException {
 

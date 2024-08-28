@@ -101,5 +101,19 @@ public class GlobalException {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
 
 	}
+	
+	// security exception
+	@ExceptionHandler(SecurityException.class)
+	public ResponseEntity<?> handleSecurityException(SecurityException ex) {
+
+		Map<Object, Object> errorResponse = new LinkedHashMap<>();
+
+		errorResponse.put("time-stamp", LocalDateTime.now());
+		errorResponse.put("status", HttpStatus.NOT_ACCEPTABLE);
+		errorResponse.put("message", ex.getLocalizedMessage());
+
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(errorResponse);
+
+	}
 
 }
